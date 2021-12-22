@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body{ margin: 0;
+    padding: 0;
+    background-image: linear-gradient(black,rgb(93, 3, 145));
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+    </style>
+</head>
+<body>
+<div id="register">
+<form>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="age">
+    <input type="text" placeholder="create id">
+    <input type="text" placeholder="create password">
+    
+    
+</form>
+</div>
+<a class="mybuttons" href="game.html"> submit </a>
+<div class="dots"></div>
+
+    <script>
+        let a = document.getElementsByClassName("mybuttons")[0];
+        let b = document.getElementById("register");
+        let nam = document.getElementsByTagName("input")[0];
+        let age = document.getElementsByTagName("input")[1];
+        let id = document.getElementsByTagName("input")[2];
+        let password = document.getElementsByTagName("input")[3];
+        
+        a.addEventListener("click", function(){
+            console.log(nam.value);
+            console.log(age.value);
+            console.log(id.value);
+            console.log(password.value);
+        });
+    </script>
+</body>
+</html>
