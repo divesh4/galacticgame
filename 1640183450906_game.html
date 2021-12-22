@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="1640183454578_style.css">
+
+    
+
+    <title>Document</title>
+    <style>
+        body{ margin: 0;
+    padding: 0;
+    background-image: linear-gradient(black,rgb(93, 3, 145));
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+ <canvas width= "400" height= "600" id="mycanvas"></canvas>
+   <div class="column">
+       <div class="game_btn">
+           <button class="weapons">aa</button>
+           <button class="weapons">bb</button>
+           <button class="weapons">cc</button>
+           <button class="weapons">dd</button>
+           <button class="weapons">ee</button>
+           <button class="weapons">ff</button>
+        </div>
+        <div class="control">
+            <button class="lr weapons">L</button>
+            <div class="ud"> 
+              <button class="fd weapons">U</button>
+              <button class="fd weapons">D</button>
+            </div>
+            <button class="lr weapons">R</button>
+        </div>
+
+    </div>
+    <script>
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        let wid = canvas.style.width;
+        // ctx.font = "30px Arial";
+        // ctx.fillStyle = "white";
+        // ctx.fillText("Nebula galaxy",120,150);
+        let y = 200;
+        let x = 580;       
+         ctx.fillStyle = "white";
+
+        
+        ctx.fillRect(y, x, 3, 3);
+                ctx.stroke();
+ 
+        
+      let left =  document.getElementsByTagName("button")[6];
+      left.addEventListener("click",function(){
+          for(let i = 0; i<1000;i++)
+            {
+              setTimeout(function(){
+                y=y-1;
+                ctx.fillRect(y, x, 3, 3);
+                ctx.stroke();
+              check(); 
+              },50*i);
+            }
+      });
+
+let right =  document.getElementsByTagName("button")[9];
+      right.addEventListener("click",function(){
+          for(let i = 0; i<1000;i++)
+            {
+              setTimeout(function(){
+              y=y+1;
+              ctx.fillRect(y, x, 3, 3);
+              ctx.stroke();
+            check();
+            },50*i);
+            }
+            
+          });
+          
+          
+let up =  document.getElementsByTagName("button")[7];
+      up.addEventListener("click",function(){
+          for(let i = 0; i<1000;i++)
+            {
+              setTimeout(function(){
+              x=x-1;
+              ctx.fillRect(y, x, 3, 3);
+              ctx.stroke();
+              check();
+            },50*i);
+            }
+          });
+          
+          
+          let down =  document.getElementsByTagName("button")[8];
+      down.addEventListener("click",function(){
+          for(let i = 0; i<1000;i++)
+            {
+              setTimeout(function(){
+              x=x+1;
+              ctx.fillRect(y, x, 3, 3);
+              ctx.stroke();
+              check();
+            },50*i);
+            }
+          });
+          function check(){
+          if(x<0|| x>600|| y<0 || y>400 )
+          {
+              ctx.fillStyle = "purple";
+          			ctx.fillRect(0, 0, 400, 600);
+              ctx.stroke();
+              
+          }
+          }
+    
+    </script>
+</body>
+</html>
