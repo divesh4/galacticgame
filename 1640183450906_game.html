@@ -55,33 +55,45 @@
          ctx.fillStyle = "white";
 
         
-        ctx.fillRect(y, x, 3, 3);
+        ctx.fillRect(y, x, 5, 5);
                 ctx.stroke();
  
         
       let left =  document.getElementsByTagName("button")[6];
       left.addEventListener("click",function(){
-          for(let i = 0; i<1000;i++)
+          for(let i = 0; i<100;i++)
             {
+
+setTimeout(function(){
+              ctx.clearRect(0, 0,400, 600);
+              ctx.stroke();
+            },15*i);
+
+
               setTimeout(function(){
                 y=y-1;
-                ctx.fillRect(y, x, 3, 3);
+                ctx.fillRect(y, x, 5, 5);
                 ctx.stroke();
               check(); 
-              },50*i);
+              },15*i);
             }
       });
 
 let right =  document.getElementsByTagName("button")[9];
       right.addEventListener("click",function(){
-          for(let i = 0; i<1000;i++)
+          for(let i = 0; i<100;i++)
             {
+
+setTimeout(function(){
+              ctx.clearRect(0, 0,400, 600);
+              ctx.stroke();
+            },15*i);
               setTimeout(function(){
               y=y+1;
-              ctx.fillRect(y, x, 3, 3);
+              ctx.fillRect(y, x, 5, 5);
               ctx.stroke();
             check();
-            },50*i);
+            },15*i);
             }
             
           });
@@ -89,35 +101,47 @@ let right =  document.getElementsByTagName("button")[9];
           
 let up =  document.getElementsByTagName("button")[7];
       up.addEventListener("click",function(){
-          for(let i = 0; i<1000;i++)
+          for(let i = 0; i<100;i++)
             {
+
+setTimeout(function(){
+              ctx.clearRect(0, 0,400, 600);
+              ctx.stroke();
+            },15*i);
+
               setTimeout(function(){
               x=x-1;
-              ctx.fillRect(y, x, 3, 3);
+              ctx.fillRect(y, x, 5, 5);
               ctx.stroke();
               check();
-            },50*i);
+            },15*i);
             }
           });
           
           
           let down =  document.getElementsByTagName("button")[8];
       down.addEventListener("click",function(){
-          for(let i = 0; i<1000;i++)
+          for(let i = 0; i<100;i++)
             {
+
+setTimeout(function(){
+              ctx.clearRect(0, 0,400, 600);
+              ctx.stroke();
+            },15*i);
               setTimeout(function(){
               x=x+1;
-              ctx.fillRect(y, x, 3, 3);
+              ctx.fillRect(y, x, 5, 5);
               ctx.stroke();
               check();
-            },50*i);
+            },15*i);
             }
           });
           function check(){
           if(x<0|| x>600|| y<0 || y>400 )
           {
               ctx.fillStyle = "purple";
-          			ctx.fillRect(0, 0, 400, 600);
+          	 ctx.font = "30px Arial";
+        ctx.fillText("Game over",200,300);	
               ctx.stroke();
               
           }
